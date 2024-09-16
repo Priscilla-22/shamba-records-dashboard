@@ -13,23 +13,36 @@ function Chart() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/chartData')
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch chart data');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setChartData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://localhost:4000/chartData')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch chart data');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setChartData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
+    setLoading(true);
+    // Hard-coded data
+    const data = [
+      { label: 'Jan', value: 100 },
+      { label: 'Feb', value: 200 },
+      { label: 'Mar', value: 300 },
+    ];
+    setChartData(data);
+    setLoading(false);
   }, []);
+
 
   if (loading) {
     return <div>Loading chart...</div>;

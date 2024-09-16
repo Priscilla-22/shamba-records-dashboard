@@ -5,24 +5,36 @@ function DataTable() {
   const [loading, setLoading] = useState(true);  
   const [error, setError] = useState(null); 
 
-  useEffect(() => {
-    fetch('http://localhost:4000/transactions')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setTransactions(data);  
-        setLoading(false);  
-      })
-      .catch(error => {
-        setError(error);  
-        setLoading(false);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/transactions')
+  //     .then(response => {
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       setTransactions(data);  
+  //       setLoading(false);  
+  //     })
+  //     .catch(error => {
+  //       setError(error);  
+  //       setLoading(false);
+  //     });
+  // }, []);
 
+  useEffect(() => {
+    setLoading(true);
+    // Hard-coded data
+    const data = [
+      { "id": 1, "date": "2024-02-01", "amount": 100 },
+      { "id": 2, "date": "2024-02-02", "amount": 200 },
+      { "id": 3, "date": "2024-02-03", "amount": 300 }
+    ];
+    setTransactions(data);
+    setLoading(false);
+  }, []);
+  
   if (loading) {
     return <div>Loading...</div>;  
   }

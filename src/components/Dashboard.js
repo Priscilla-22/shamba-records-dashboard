@@ -8,22 +8,34 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/metrics')
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch metrics');
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setMetrics(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://localhost:4000/metrics')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch metrics');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setMetrics(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
+    setLoading(true);
+    // Hard-coded data
+    const data = [
+      { label: 'Total Sales', value: 1000 },
+      { label: 'Active Users', value: 500 },
+      { label: 'Monthly Revenue', value: 5000 },
+    ];
+    setMetrics(data);
+    setLoading(false);
   }, []);
 
   if (loading) {
