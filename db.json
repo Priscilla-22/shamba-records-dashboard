@@ -5,9 +5,9 @@
     { "label": "Monthly Revenue", "value": 5000 }
   ],
   "transactions": [
-    { "id": 1, "date": "2023-02-01", "amount": 100 },
-    { "id": 2, "date": "2023-02-02", "amount": 200 },
-    { "id": 3, "date": "2023-02-03", "amount": 300 }
+    { "id": 1, "date": "2024-02-01", "amount": 100 },
+    { "id": 2, "date": "2024-02-02", "amount": 200 },
+    { "id": 3, "date": "2024-02-03", "amount": 300 }
   ],
   "chartData": [
     { "label": "Jan", "value": 100 },
