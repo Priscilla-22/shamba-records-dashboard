@@ -30,6 +30,41 @@ function DataTable() {
         type: 'Market Linkage',
         category: 'Crop Sale',
       },
+      {
+        id: 4,
+        date: '2024-02-01',
+        amount: 100,
+        type: 'Loan',
+        category: 'Cash Advance',
+      },
+      {
+        id: 5,
+        date: '2024-02-02',
+        amount: 200,
+        type: 'Insurance',
+        category: 'Health Cover',
+      },
+      {
+        id: 6,
+        date: '2024-02-03',
+        amount: 300,
+        type: 'Market Linkage',
+        category: 'Crop Sale',
+      },
+      {
+        id: 7,
+        date: '2024-02-03',
+        amount: 300,
+        type: 'Market Linkage',
+        category: 'Crop Sale',
+      },
+      {
+        id: 8,
+        date: '2024-02-03',
+        amount: 300,
+        type: 'Market Linkage',
+        category: 'Crop Sale',
+      },
     ];
     setTransactions(data);
     setLoading(false);
@@ -44,9 +79,9 @@ function DataTable() {
   }
 
   return (
-    <div className='bg-white  rounded shadow-md mt-10'>
+    <div className='bg-white  rounded-lg shadow-md mt-6'>
       <h2
-        className='text-lg font-bold text-white bg-gray-800'
+        className='text-lg font-bold text-white bg-gray-800 text-center rounded'
       >
         Recent Transactions
       </h2>

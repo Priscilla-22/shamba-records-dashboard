@@ -3,7 +3,6 @@ import { IoMdArrowDropdownCircle, IoMdArrowDropupCircle } from 'react-icons/io';
 import { MdDashboard } from 'react-icons/md';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
-import { FaUsers, FaShieldAlt, FaMoneyBillWave, FaGlobe } from 'react-icons/fa'; // Added icons
 
 function Sidebar({ isSidebarOpen }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,14 +18,14 @@ function Sidebar({ isSidebarOpen }) {
       }`}
     >
       <div
-        className={`flex items-center mb-4 ${
+        className={`flex items-center my-8 ${
           isSidebarOpen ? '' : 'justify-center'
         }`}
       >
         <img
           src='/shamba-records-logo1.png'
           alt='Shamba Records Logo'
-          className={`h-10 w-10 ${isSidebarOpen ? 'mr-2' : 'mt-4'}`}
+          className={`h-10 w-10 ${isSidebarOpen ? 'mr-1' : 'mt-4'}`}
         />
         {isSidebarOpen && (
           <h1 className='ml-2 text-xl font-lemon tracking-wider'>Shamba Records</h1>
@@ -37,7 +36,7 @@ function Sidebar({ isSidebarOpen }) {
 
       <div className='my-4'>
         <div
-          className='flex items-center mb-2 cursor-pointer'
+          className='flex items-center my-6 cursor-pointer'
           onClick={toggleDropdown}
         >
           <img
@@ -92,56 +91,21 @@ function Sidebar({ isSidebarOpen }) {
       </div>
       <hr className='border-gray-300 mb-4' />
 
-      <ul className='mt-14'>
+      <ul className='mt-10'>
         <li>
           <a
             href='#dashboard'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+            className='flex items-center py-2 mb-2 px-4 text-lg hover:bg-green-700 rounded'
           >
             <MdDashboard className='text-2xl' />
             {isSidebarOpen && <span className='ml-3'>Dashboard</span>}
           </a>
         </li>
-        <li>
-          <a
-            href='#farmers'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <FaUsers className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Farmers</span>}
-          </a>
-        </li>
-        <li>
-          <a
-            href='#insurance'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <FaShieldAlt className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Insurance</span>}
-          </a>
-        </li>
-        <li>
-          <a
-            href='#loans'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <FaMoneyBillWave className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Loans</span>}
-          </a>
-        </li>
-        <li>
-          <a
-            href='#market-linkages'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <FaGlobe className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Market Linkages</span>}
-          </a>
-        </li>
+    
         <li>
           <a
             href='#reports'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+            className='flex items-center py-2 mb-2 px-4 text-lg hover:bg-green-700 rounded'
           >
             <HiOutlineDocumentReport className='text-2xl' />
             {isSidebarOpen && <span className='ml-3'>Reports</span>}
