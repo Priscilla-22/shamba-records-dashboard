@@ -27,7 +27,7 @@ function App() {
       {/* Toggle Button */}
       <div
         className={`absolute top-4 ml-14 transition-all duration-300 ${
-          isSidebarOpen ? 'left-52' : 'left-20'
+          isSidebarOpen ? 'left-36' : 'left-20'
         }`}
       >
         <button
