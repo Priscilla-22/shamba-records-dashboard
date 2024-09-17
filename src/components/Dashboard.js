@@ -5,15 +5,26 @@ import Chart from './Chart';
 
 const cardDetails = [
   {
+    label: 'Total Sales',
+    value: 2000,
+    bgColor: '#F0E68C',
+    iconSrc: 'icons-bar-chart.png',
+  },
+  {
+    label: 'Active users',
+    value: 2000,
+    bgColor: '#CFE2F3',
+    iconSrc: 'icons-user.png',
+  },
+  {
     label: 'Total Farmers Supported',
     value: 10000,
     bgColor: '#FFDDC1',
-    // iconSrc: ' /active-farmer.png',
-    iconSrc: ' fluency-farmer.png',
+    iconSrc: 'fluency-farmer.png',
   },
   {
     label: 'Total Loans Disbursed',
-    value: 2000000,
+    value: 2000,
     bgColor: '#CFE2F3',
     iconSrc: '/icon-total-sale.png',
   },
@@ -45,7 +56,7 @@ function Dashboard() {
   return (
     <div className='p-4'>
       <h1 className='text-2xl font-bold ml-8'>Dashboard</h1>
-      <div className='flex flex-wrap gap-4 mt-4'>
+      <div className='flex flex-wrap gap-6 mt-4 mb-4'>
         {cardDetails.map((card, index) => (
           <MetricCard
             key={index}
@@ -55,8 +66,14 @@ function Dashboard() {
           />
         ))}
       </div>
-      <DataTable />
-      <Chart />
+      <div className='flex gap-4'>
+        <div className='flex-1'>
+          <Chart />
+        </div>
+        <div className='flex-1'>
+          <DataTable />
+        </div>
+      </div>
     </div>
   );
 }
