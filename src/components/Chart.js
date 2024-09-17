@@ -6,7 +6,6 @@ import {
   LinearScale,
   LineElement,
   PointElement,
-  Title,
   Tooltip,
   Legend,
 } from 'chart.js';
@@ -16,7 +15,6 @@ ChartJS.register(
   LinearScale,
   LineElement,
   PointElement,
-  Title,
   Tooltip,
   Legend
 );
@@ -42,8 +40,7 @@ function Chart() {
       tooltip: {
         callbacks: {
           label: function (tooltipItem) {
-            // Customizing tooltip label
-            return `Amount: ${tooltipItem.raw.toLocaleString()}`;
+            return `Amount: $${tooltipItem.raw.toLocaleString()}`;
           },
         },
         titleFont: { size: 16 },
@@ -54,9 +51,7 @@ function Chart() {
         position: 'top',
       },
       title: {
-        display: true,
-        text: 'Loan Disbursement Trends',
-        font: { size: 18 },
+        display: false, // Turn off the default title
       },
     },
     scales: {
@@ -83,8 +78,20 @@ function Chart() {
   };
 
   return (
-    <div className='bg-white p-4 rounded shadow-md mt-4'>
-      <Line data={data} options={options} />
+    <div className='p-4 rounded-lg shadow-md mt-4 bg-white'>
+      <div className='bg-[#05122c] p-4 rounded-lg'>
+        <Line data={data} options={options} />
+      </div>
+      <div className='mb-4'>
+        <h2 className='mt-2 text-lg font-semibold text-gray-800 text-center'>
+          Loan Disbursement Trends
+        </h2>
+        <p className='text-gray-600 mt-1'>
+          This chart shows the trends in loan disbursements over the past few
+          months. It helps in understanding how the amount of loans provided has
+          varied and can be used to identify trends and make informed decisions.
+        </p>
+      </div>
     </div>
   );
 }
