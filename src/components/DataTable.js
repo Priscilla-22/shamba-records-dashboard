@@ -5,24 +5,6 @@ function DataTable() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:4000/transactions')
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return response.json();
-  //     })
-  //     .then(data => {
-  //       setTransactions(data);
-  //       setLoading(false);
-  //     })
-  //     .catch(error => {
-  //       setError(error);
-  //       setLoading(false);
-  //     });
-  // }, []);
-
   useEffect(() => {
     setLoading(true);
     // Hard-coded data
@@ -62,26 +44,32 @@ function DataTable() {
   }
 
   return (
-    <div className='bg-white p-4 rounded shadow-md'>
-      <h2 className='text-lg font-bold'>Recent Transactions</h2>
-      <table className='w-full'>
+    <div className='bg-white  rounded shadow-md'>
+      {/* Apply the background color to the heading */}
+      <h2
+        className='text-lg font-bold text-white bg-gray-800'
+        // style={{ backgroundColor: '#CFE2F3' }}
+      >
+        Recent Transactions
+      </h2>
+      <table className='w-full border-collapse'>
         <thead>
-          <tr>
-            <th className='px-4 py-2'>ID</th>
-            <th className='px-4 py-2'>Date</th>
-            <th className='px-4 py-2'>Amount</th>
-            <th className='px-4 py-2'>Type</th>
-            <th className='px-4 py-2'>Category</th>
+          <tr className='bg-gray-800'>
+            <th className='border px-4 py-2 text-left text-white'>ID</th>
+            <th className='border px-4 py-2 text-left text-white'>Date</th>
+            <th className='border px-4 py-2 text-left text-white'>Amount</th>
+            <th className='border px-4 py-2 text-left text-white'>Type</th>
+            <th className='border px-4 py-2 text-left text-white'>Category</th>
           </tr>
         </thead>
         <tbody>
           {transactions.map((transaction) => (
             <tr key={transaction.id}>
-              <td className='px-4 py-2'>{transaction.id}</td>
-              <td className='px-4 py-2'>{transaction.date}</td>
-              <td className='px-4 py-2'>{transaction.amount}</td>
-              <td className='px-4 py-2'>{transaction.type}</td>
-              <td className='px-4 py-2'>{transaction.category}</td>
+              <td className='border px-4 py-2'>{transaction.id}</td>
+              <td className='border px-4 py-2 bg-gray-100'>{transaction.date}</td>
+              <td className='border px-4 py-2'>{`$${transaction.amount.toLocaleString()}`}</td>
+              <td className='border px-4 py-2 bg-gray-100'>{transaction.type}</td>
+              <td className='border px-4 py-2'>{transaction.category}</td>
             </tr>
           ))}
         </tbody>
@@ -89,6 +77,5 @@ function DataTable() {
     </div>
   );
 }
-
 
 export default DataTable;
