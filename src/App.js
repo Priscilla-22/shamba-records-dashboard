@@ -8,17 +8,14 @@ import './index.css';
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  // Toggle Sidebar visibility
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <div className='flex h-screen bg-custom-smokeWhite'>
-      {/* Sidebar */}
       {isSidebarOpen && <Sidebar />}
 
-      {/* Main Content */}
       <div className={`flex-grow ${isSidebarOpen ? 'ml-1' : ''}`}>
         <Dashboard />
       </div>
