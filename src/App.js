@@ -14,17 +14,21 @@ function App() {
 
   return (
     <div className='flex h-screen bg-custom-smokeWhite'>
-      {isSidebarOpen && <Sidebar />}
+      <Sidebar isSidebarOpen={isSidebarOpen} />
 
-      <div className={`flex-grow ${isSidebarOpen ? 'ml-1' : ''}`}>
+      <div
+        className={`flex-grow transition-all duration-300 ${
+          isSidebarOpen ? 'ml-4 ' : 'ml-2'
+        }`}
+      >
         <Dashboard />
       </div>
 
       {/* Toggle Button */}
       <div
-        className={`absolute top-4 ml-2 ${
-          isSidebarOpen ? 'left-64' : 'left-4'
-        } transition-all duration-300`}
+        className={`absolute top-4 ml-14 transition-all duration-300 ${
+          isSidebarOpen ? 'left-52' : 'left-20'
+        }`}
       >
         <button
           onClick={toggleSidebar}
