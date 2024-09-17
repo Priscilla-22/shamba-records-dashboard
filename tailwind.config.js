@@ -7,6 +7,14 @@ module.exports = {
         'custom-smokeWhite': '#f4f3ef',
         'custom-brown': '#66615b',
         'custom-orange': '#e37e57',
+        'custom-white': '#ffffffda',
+      },
+      fontFamily: {
+        lemon: ['Lemon', 'serif'], 
+      },
+      letterSpacing: {
+        wider: '0.05em', 
+        widest: '0.1em', 
       },
     },
   },
