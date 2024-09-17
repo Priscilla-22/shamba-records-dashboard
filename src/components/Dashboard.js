@@ -48,8 +48,8 @@ function Dashboard() {
 
   return (
     <div className='p-4'>
-      <h1 className='text-2xl font-bold'>Dashboard</h1>
-      <div className='flex flex-wrap -mx-4'>
+      <h1 className='text-2xl font-bold ml-8'>Dashboard</h1>
+      <div className='flex flex-wrap -mx-4 mt-4'>
         {metrics.map((metric, index) => (
           <MetricCard key={index} metric={metric} />
         ))}
