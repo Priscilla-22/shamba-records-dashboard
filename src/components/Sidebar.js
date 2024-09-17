@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { IoMdArrowDropdownCircle, IoMdArrowDropupCircle } from 'react-icons/io';
-import { MdDashboard } from 'react-icons/md'; // Dashboard icon
-import { HiOutlineDocumentReport } from 'react-icons/hi'; // Report icon
-import { FiSettings } from 'react-icons/fi'; // Settings icon
+import { MdDashboard } from 'react-icons/md';
+import { HiOutlineDocumentReport } from 'react-icons/hi';
+import { FiSettings } from 'react-icons/fi';
+import { FaUsers, FaShieldAlt, FaMoneyBillWave, FaGlobe } from 'react-icons/fa'; // Added icons
 
 function Sidebar({ isSidebarOpen }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,11 +14,10 @@ function Sidebar({ isSidebarOpen }) {
 
   return (
     <div
-      className={`bg-custom-brown p-4 transition-all duration-300 ${
-        isSidebarOpen ? 'w-64' : 'w-32'
+      className={`max-h-screen bg-custom-green text-white p-4 transition-all duration-300 ${
+        isSidebarOpen ? 'w-64' : 'w-40'
       }`}
     >
-      {/* Logo and Shamba Records */}
       <div
         className={`flex items-center mb-4 ${
           isSidebarOpen ? '' : 'justify-center'
@@ -29,15 +29,12 @@ function Sidebar({ isSidebarOpen }) {
           className={`h-10 w-10 ${isSidebarOpen ? 'mr-2' : ''}`}
         />
         {isSidebarOpen && (
-          <h1 className='ml-4 text-xl text-white font-lemon tracking-wider'>
-            Shamba Records
-          </h1>
+          <h1 className='ml-4 text-xl font-lemon tracking-wider'>Shamba Records</h1>
         )}
       </div>
 
-      <hr className='border-gray-300 mb-4 border-t-1' />
+      <hr className='border-gray-300 mb-4' />
 
-      {/* Profile Section */}
       <div className='my-4'>
         <div
           className='flex items-center mb-2 cursor-pointer'
@@ -51,33 +48,24 @@ function Sidebar({ isSidebarOpen }) {
             }`}
           />
           {isSidebarOpen && (
-            <div>
-              <p className='text-base font-medium text-custom-smokeWhite hover:text-white'>
-                Priscilla Wakahia
-              </p>
-            </div>
+            <p className='text-base font-medium'>Priscilla Wakahia</p>
           )}
-
-          {/* Dropdown Icon */}
           <div className='ml-auto'>
-            <div className='rounded-full p-1'>
-              {isDropdownOpen ? (
-                <IoMdArrowDropupCircle size={20} className='text-gray-800' />
-              ) : (
-                <IoMdArrowDropdownCircle size={20} className='text-gray-800' />
-              )}
-            </div>
+            {isDropdownOpen ? (
+              <IoMdArrowDropupCircle size={20} />
+            ) : (
+              <IoMdArrowDropdownCircle size={20} />
+            )}
           </div>
         </div>
 
-        {/* Dropdown Menu */}
         {isSidebarOpen && isDropdownOpen && (
           <div className='pl-14'>
             <ul className='space-y-2'>
               <li>
                 <a
                   href='#profile'
-                  className='block px-4 text-custom-smokeWhite hover:text-white'
+                  className='block px-4 py-2 hover:bg-green-700 rounded'
                 >
                   Profile
                 </a>
@@ -85,7 +73,7 @@ function Sidebar({ isSidebarOpen }) {
               <li>
                 <a
                   href='#settings'
-                  className='block px-4 text-custom-smokeWhite hover:text-white rounded'
+                  className='block px-4 py-2 hover:bg-green-700 rounded'
                 >
                   Settings
                 </a>
@@ -93,7 +81,7 @@ function Sidebar({ isSidebarOpen }) {
               <li>
                 <a
                   href='#logout'
-                  className='block px-4 text-custom-smokeWhite hover:text-white rounded'
+                  className='block px-4 py-2 hover:bg-green-700 rounded'
                 >
                   Logout
                 </a>
@@ -102,34 +90,69 @@ function Sidebar({ isSidebarOpen }) {
           </div>
         )}
       </div>
-      <hr className='border-gray-300 mb-4 border-t-1' />
+      <hr className='border-gray-300 mb-4' />
 
-      {/* Sidebar Navigation */}
       <ul className='mt-14'>
         <li>
           <a
-            href='#'
-            className='flex items-center py-2 px-4 text-lg text-custom-white hover:text-custom-orange rounded-lg mb-2'
+            href='#dashboard'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
           >
-            <MdDashboard className='text-custom-orange text-3xl' />
+            <MdDashboard className='text-2xl' />
             {isSidebarOpen && <span className='ml-3'>Dashboard</span>}
           </a>
         </li>
         <li>
           <a
-            href='#'
-            className='flex items-center py-2 px-4 text-xl text-custom-white hover:text-custom-orange rounded-lg'
+            href='#farmers'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
           >
-            <HiOutlineDocumentReport className='text-custom-orange text-3xl my-2' />
+            <FaUsers className='text-2xl' />
+            {isSidebarOpen && <span className='ml-3'>Farmers</span>}
+          </a>
+        </li>
+        <li>
+          <a
+            href='#insurance'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+          >
+            <FaShieldAlt className='text-2xl' />
+            {isSidebarOpen && <span className='ml-3'>Insurance</span>}
+          </a>
+        </li>
+        <li>
+          <a
+            href='#loans'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+          >
+            <FaMoneyBillWave className='text-2xl' />
+            {isSidebarOpen && <span className='ml-3'>Loans</span>}
+          </a>
+        </li>
+        <li>
+          <a
+            href='#market-linkages'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+          >
+            <FaGlobe className='text-2xl' />
+            {isSidebarOpen && <span className='ml-3'>Market Linkages</span>}
+          </a>
+        </li>
+        <li>
+          <a
+            href='#reports'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
+          >
+            <HiOutlineDocumentReport className='text-2xl' />
             {isSidebarOpen && <span className='ml-3'>Reports</span>}
           </a>
         </li>
         <li>
           <a
-            href='#'
-            className='flex items-center py-2 px-4 text-xl text-custom-white hover:text-custom-orange rounded-lg'
+            href='#settings'
+            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
           >
-            <FiSettings className='text-custom-orange text-3xl my-2' />
+            <FiSettings className='text-2xl' />
             {isSidebarOpen && <span className='ml-3'>Settings</span>}
           </a>
         </li>

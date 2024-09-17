@@ -8,13 +8,14 @@ module.exports = {
         'custom-brown': '#66615b',
         'custom-orange': '#e37e57',
         'custom-white': '#ffffffda',
+        'custom-green': '#1B872F',
       },
       fontFamily: {
-        lemon: ['Lemon', 'serif'], 
+        lemon: ['Lemon', 'serif'],
       },
       letterSpacing: {
-        wider: '0.05em', 
-        widest: '0.1em', 
+        wider: '0.05em',
+        widest: '0.1em',
       },
     },
   },

@@ -1,67 +1,90 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
   Tooltip,
-} from 'recharts';
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 function Chart() {
-  const [chartData, setChartData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const data = {
+    labels: ['January', 'February', 'March', 'April', 'May'],
+    datasets: [
+      {
+        label: 'Loan Disbursement Trends',
+        data: [5000, 7000, 6000, 8000, 7500],
+        borderColor: 'rgb(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+        tension: 0.1,
+      },
+    ],
+  };
 
-  // useEffect(() => {
-  //   fetch('http://localhost:4000/chartData')
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch chart data');
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       setChartData(data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       setError(error);
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    setLoading(true);
-    // Hard-coded data
-    const data = [
-      { label: 'Jan', value: 100 },
-      { label: 'Feb', value: 200 },
-      { label: 'Mar', value: 300 },
-    ];
-    setChartData(data);
-    setLoading(false);
-  }, []);
-
-
-  if (loading) {
-    return <div>Loading chart...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const options = {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            // Customizing tooltip label
+            return `Amount: ${tooltipItem.raw.toLocaleString()}`;
+          },
+        },
+        titleFont: { size: 16 },
+        bodyFont: { size: 14 },
+      },
+      legend: {
+        display: true,
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Loan Disbursement Trends',
+        font: { size: 18 },
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Month',
+          font: { size: 14 },
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Amount (in $)',
+          font: { size: 14 },
+        },
+        ticks: {
+          callback: function (value) {
+            return `$${value.toLocaleString()}`;
+          },
+        },
+      },
+    },
+  };
 
   return (
-    <div className='bg-white p-4 rounded shadow-md'>
-      <h2 className='text-lg font-bold'>Trends Over Time</h2>
-      <LineChart width={400} height={200} data={chartData}>
-        <Line type='monotone' dataKey='value' stroke='#8884d8' />
-        <XAxis dataKey='label' />
-        <YAxis />
-        <CartesianGrid stroke='#ccc' strokeDasharray='5 5' />
-        <Tooltip />
-      </LineChart>
+    <div className='bg-white p-4 rounded shadow-md mt-4'>
+      <Line data={data} options={options} />
     </div>
   );
 }
