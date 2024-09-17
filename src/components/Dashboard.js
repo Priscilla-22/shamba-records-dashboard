@@ -7,31 +7,31 @@ const cardDetails = [
   {
     label: 'Total Sales',
     value: 2000,
-    bgColor: '#F0E68C',
+    gradient: 'linear-gradient(90deg, #F0E68C 0%, #FFF8DC 100%)',
     iconSrc: 'icons-bar-chart.png',
   },
   {
-    label: 'Active users',
+    label: 'Active Users',
     value: 2000,
-    bgColor: '#CFE2F3',
+    gradient: 'linear-gradient(90deg, #CFE2F3 0%, #EAF3F7 100%)',
     iconSrc: 'icons-user.png',
   },
   {
     label: 'Total Farmers Supported',
     value: 10000,
-    bgColor: '#FFDDC1',
+    gradient: 'linear-gradient(90deg, #FFDDC1 0%, #FFF1E6 100%)',
     iconSrc: 'fluency-farmer.png',
   },
   {
     label: 'Total Loans Disbursed',
     value: 2000,
-    bgColor: '#CFE2F3',
+    gradient: 'linear-gradient(90deg, #C6A8A0 0%, #E2D3D1 100%)', 
     iconSrc: '/icon-total-sale.png',
   },
   {
-    label: 'Market Linkages Established',
-    value: 150,
-    bgColor: '#D9EAD3',
+    label: 'Market Linkages',
+    value: 1500,
+    gradient: 'linear-gradient(90deg, #D9EAD3 0%, #EDF7ED 100%)',
     iconSrc: '/icon-linkage.png',
   },
 ];
@@ -61,7 +61,7 @@ function Dashboard() {
           <MetricCard
             key={index}
             metric={{ label: card.label, value: card.value }}
-            bgColor={card.bgColor}
+            gradient={card.gradient}
             iconSrc={card.iconSrc}
           />
         ))}

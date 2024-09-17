@@ -14,7 +14,7 @@ function Sidebar({ isSidebarOpen }) {
 
   return (
     <div
-      className={`max-h-screen bg-custom-green text-white p-4 transition-all duration-300 ${
+      className={`max-h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
         isSidebarOpen ? 'w-64' : 'w-40'
       }`}
     >
@@ -26,10 +26,10 @@ function Sidebar({ isSidebarOpen }) {
         <img
           src='/shamba-records-logo1.png'
           alt='Shamba Records Logo'
-          className={`h-10 w-10 ${isSidebarOpen ? 'mr-2' : ''}`}
+          className={`h-10 w-10 ${isSidebarOpen ? 'mr-2' : 'mt-4'}`}
         />
         {isSidebarOpen && (
-          <h1 className='ml-4 text-xl font-lemon tracking-wider'>Shamba Records</h1>
+          <h1 className='ml-2 text-xl font-lemon tracking-wider'>Shamba Records</h1>
         )}
       </div>
 

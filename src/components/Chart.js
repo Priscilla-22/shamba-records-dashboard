@@ -51,7 +51,7 @@ function Chart() {
         position: 'top',
       },
       title: {
-        display: false, // Turn off the default title
+        display: false, 
       },
     },
     scales: {

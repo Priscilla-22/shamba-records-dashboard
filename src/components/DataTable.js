@@ -44,11 +44,9 @@ function DataTable() {
   }
 
   return (
-    <div className='bg-white  rounded shadow-md'>
-      {/* Apply the background color to the heading */}
+    <div className='bg-white  rounded shadow-md mt-10'>
       <h2
         className='text-lg font-bold text-white bg-gray-800'
-        // style={{ backgroundColor: '#CFE2F3' }}
       >
         Recent Transactions
       </h2>
