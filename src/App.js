@@ -42,8 +42,8 @@ function App() {
         </div>
 
         <div
-          className={`fixed top-4 transition-all duration-300 ${
-            isSidebarOpen ? 'left-48' : 'left-20'
+          className={`fixed top-4 z-10 transition-all duration-300 ${
+            isSidebarOpen ? 'left-52' : 'left-24'
           }`}
         >
           <button
