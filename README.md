@@ -14,7 +14,7 @@ This project is a simple, responsive dashboard interface for a web application. 
 
 ## Live Demo
 
-You can view the live demo of the dashboard here: [Shamba Records Dashboard](https://shamba-records-dashboard.vercel.app/)
+You can view the live demo of the dashboard here: [Shamba Records Dashboard](https://shamba-records-dashboard.onrender.com/)
 
 ## Screenshot
 
