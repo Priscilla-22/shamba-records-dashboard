@@ -88,5 +88,38 @@
       "type": "Market Linkage",
       "category": "Crop Sale"
     }
+  ],
+
+  "reports": [
+    {
+      "id": 1,
+      "date": "2024-09-01",
+      "report": "Monthly Sales",
+      "amount": "$1,200"
+    },
+    {
+      "id": 2,
+      "date": "2024-08-01",
+      "report": "Monthly Sales",
+      "amount": "$1,000"
+    },
+    {
+      "id": 3,
+      "date": "2024-07-01",
+      "report": "Monthly Sales",
+      "amount": "$950"
+    },
+    {
+      "id": 4,
+      "date": "2024-07-01",
+      "report": "Monthly Sales",
+      "amount": "$950"
+    },
+    {
+      "id": 5,
+      "date": "2024-07-01",
+      "report": "Monthly Sales",
+      "amount": "$950"
+    }
   ]
 }
