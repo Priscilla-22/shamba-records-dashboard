@@ -13,8 +13,8 @@ const Sidebar = ({ isSidebarOpen, onLinkClick }) => {
     <a
       href={href}
       onClick={(e) => {
-        e.preventDefault(); // Prevent default anchor behavior
-        onClick(text.toLowerCase()); // Pass the text (converted to lowercase) to the onClick handler
+        e.preventDefault(); 
+        onClick(text.toLowerCase()); 
       }}
       className='flex items-center py-2 px-4 mb-2 text-lg hover:bg-green-700 rounded'
       style={{ minWidth: isSidebarOpen ? '100%' : '3.3rem' }}
