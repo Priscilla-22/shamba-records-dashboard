@@ -4,17 +4,26 @@ import { MdDashboard } from 'react-icons/md';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
 
-function Sidebar({ isSidebarOpen }) {
+const Sidebar = ({ isSidebarOpen }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+
+const SidebarItem = ({ href, icon: Icon, text }) => (
+  <a
+    href={href}
+    className='flex items-center py-2 px-4 mb-2 text-lg hover:bg-green-700 rounded'
+    style={{ minWidth: isSidebarOpen ? '100%' : '3.3rem' }} 
+  >
+    <Icon className='text-2xl' />
+    {isSidebarOpen && <span className='ml-3'>{text}</span>}
+  </a>
+);
 
   return (
     <div
       className={`max-h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
-        isSidebarOpen ? 'w-64' : 'w-40'
+        isSidebarOpen ? 'w-64' : 'w-20'
       }`}
     >
       <div
@@ -28,7 +37,9 @@ function Sidebar({ isSidebarOpen }) {
           className={`h-10 w-10 ${isSidebarOpen ? 'mr-1' : 'mt-4'}`}
         />
         {isSidebarOpen && (
-          <h1 className='ml-2 text-xl font-lemon tracking-wider'>Shamba Records</h1>
+          <h1 className='ml-2 text-xl font-lemon tracking-wider'>
+            Shamba Records
+          </h1>
         )}
       </div>
 
@@ -47,15 +58,17 @@ function Sidebar({ isSidebarOpen }) {
             }`}
           />
           {isSidebarOpen && (
-            <p className='text-base font-medium'>Priscilla Wakahia</p>
+            <>
+              <p className='text-base font-medium'>Priscilla Wakahia</p>
+              <div className='ml-auto'>
+                {isDropdownOpen ? (
+                  <IoMdArrowDropupCircle size={20} />
+                ) : (
+                  <IoMdArrowDropdownCircle size={20} />
+                )}
+              </div>
+            </>
           )}
-          <div className='ml-auto'>
-            {isDropdownOpen ? (
-              <IoMdArrowDropupCircle size={20} />
-            ) : (
-              <IoMdArrowDropdownCircle size={20} />
-            )}
-          </div>
         </div>
 
         {isSidebarOpen && isDropdownOpen && (
@@ -89,40 +102,26 @@ function Sidebar({ isSidebarOpen }) {
           </div>
         )}
       </div>
+
       <hr className='border-gray-300 mb-4' />
 
       <ul className='mt-10'>
         <li>
-          <a
-            href='#dashboard'
-            className='flex items-center py-2 mb-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <MdDashboard className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Dashboard</span>}
-          </a>
+          <SidebarItem href='#dashboard' icon={MdDashboard} text='Dashboard' />
         </li>
-    
         <li>
-          <a
+          <SidebarItem
             href='#reports'
-            className='flex items-center py-2 mb-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <HiOutlineDocumentReport className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Reports</span>}
-          </a>
+            icon={HiOutlineDocumentReport}
+            text='Reports'
+          />
         </li>
         <li>
-          <a
-            href='#settings'
-            className='flex items-center py-2 px-4 text-lg hover:bg-green-700 rounded'
-          >
-            <FiSettings className='text-2xl' />
-            {isSidebarOpen && <span className='ml-3'>Settings</span>}
-          </a>
+          <SidebarItem href='#settings' icon={FiSettings} text='Settings' />
         </li>
       </ul>
     </div>
   );
-}
+};
 
 export default Sidebar;
