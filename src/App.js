@@ -32,7 +32,7 @@ function App() {
         {/* Sidebar Toggle Button */}
         <div
           className={`fixed top-4 z-50 transition-all duration-300 ${
-            isSidebarOpen ? 'left-52' : 'left-20'
+            isSidebarOpen ? 'left-52' : 'left-24'
           }`}
         >
           <button
