@@ -1,0 +1,92 @@
+{
+  "cardDetails": [
+    {
+      "label": "Total Sales",
+      "value": 2000,
+      "gradient": "linear-gradient(90deg, #F0E68C 0%, #FFF8DC 100%)",
+      "iconSrc": "icons-bar-chart.png"
+    },
+    {
+      "label": "Active Users",
+      "value": 2000,
+      "gradient": "linear-gradient(90deg, #CFE2F3 0%, #EAF3F7 100%)",
+      "iconSrc": "icons-user.png"
+    },
+    {
+      "label": "Total Farmers Supported",
+      "value": 10000,
+      "gradient": "linear-gradient(90deg, #FFDDC1 0%, #FFF1E6 100%)",
+      "iconSrc": "fluency-farmer.png"
+    },
+    {
+      "label": "Total Loans Disbursed",
+      "value": 2000,
+      "gradient": "linear-gradient(90deg, #C6A8A0 0%, #E2D3D1 100%)",
+      "iconSrc": "/icon-total-sale.png"
+    },
+    {
+      "label": "Market Linkages",
+      "value": 1500,
+      "gradient": "linear-gradient(90deg, #D9EAD3 0%, #EDF7ED 100%)",
+      "iconSrc": "/icon-linkage.png"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2024-02-01",
+      "amount": 100,
+      "type": "Loan",
+      "category": "Cash Advance"
+    },
+    {
+      "id": 2,
+      "date": "2024-02-02",
+      "amount": 200,
+      "type": "Insurance",
+      "category": "Health Cover"
+    },
+    {
+      "id": 3,
+      "date": "2024-02-03",
+      "amount": 300,
+      "type": "Market Linkage",
+      "category": "Crop Sale"
+    },
+    {
+      "id": 4,
+      "date": "2024-02-01",
+      "amount": 100,
+      "type": "Loan",
+      "category": "Cash Advance"
+    },
+    {
+      "id": 5,
+      "date": "2024-02-02",
+      "amount": 200,
+      "type": "Insurance",
+      "category": "Health Cover"
+    },
+    {
+      "id": 6,
+      "date": "2024-02-03",
+      "amount": 300,
+      "type": "Market Linkage",
+      "category": "Crop Sale"
+    },
+    {
+      "id": 7,
+      "date": "2024-02-03",
+      "amount": 300,
+      "type": "Market Linkage",
+      "category": "Crop Sale"
+    },
+    {
+      "id": 8,
+      "date": "2024-02-03",
+      "amount": 300,
+      "type": "Market Linkage",
+      "category": "Crop Sale"
+    }
+  ]
+}

@@ -6,61 +6,22 @@ function DataTable() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    const data = [
-      {
-        id: 1,
-        date: '2024-02-01',
-        amount: 100,
-        type: 'Loan',
-        category: 'Cash Advance',
-      },
-      {
-        id: 2,
-        date: '2024-02-02',
-        amount: 200,
-        type: 'Insurance',
-        category: 'Health Cover',
-      },
-      {
-        id: 3,
-        date: '2024-02-03',
-        amount: 300,
-        type: 'Market Linkage',
-        category: 'Crop Sale',
-      },
-      {
-        id: 4,
-        date: '2024-02-01',
-        amount: 100,
-        type: 'Loan',
-        category: 'Cash Advance',
-      },
-      {
-        id: 5,
-        date: '2024-02-02',
-        amount: 200,
-        type: 'Insurance',
-        category: 'Health Cover',
-      },
-      {
-        id: 6,
-        date: '2024-02-03',
-        amount: 300,
-        type: 'Market Linkage',
-        category: 'Crop Sale',
-      },
-      {
-        id: 7,
-        date: '2024-02-03',
-        amount: 300,
-        type: 'Market Linkage',
-        category: 'Crop Sale',
-      },
-    
-    ];
-    setTransactions(data);
-    setLoading(false);
+    const fetchTransactions = async () => {
+      try {
+        const response = await fetch('/db.json'); 
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setTransactions(data.transactions); 
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchTransactions();
   }, []);
 
   if (loading) {
@@ -72,10 +33,8 @@ function DataTable() {
   }
 
   return (
-    <div className='bg-white  rounded-lg shadow-md mt-6'>
-      <h2
-        className='text-lg font-bold text-white bg-gray-800 text-center rounded'
-      >
+    <div className='bg-white rounded-lg shadow-md mt-6'>
+      <h2 className='text-lg font-bold text-white bg-gray-800 text-center rounded'>
         Recent Transactions
       </h2>
       <table className='w-full border-collapse'>
@@ -92,9 +51,13 @@ function DataTable() {
           {transactions.map((transaction) => (
             <tr key={transaction.id}>
               <td className='border px-4 py-2'>{transaction.id}</td>
-              <td className='border px-4 py-2 bg-gray-100'>{transaction.date}</td>
+              <td className='border px-4 py-2 bg-gray-100'>
+                {transaction.date}
+              </td>
               <td className='border px-4 py-2'>{`$${transaction.amount.toLocaleString()}`}</td>
-              <td className='border px-4 py-2 bg-gray-100'>{transaction.type}</td>
+              <td className='border px-4 py-2 bg-gray-100'>
+                {transaction.type}
+              </td>
               <td className='border px-4 py-2'>{transaction.category}</td>
             </tr>
           ))}

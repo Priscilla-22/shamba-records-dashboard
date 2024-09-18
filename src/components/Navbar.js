@@ -16,7 +16,6 @@ const Navbar = () => {
           <FaSearch className='absolute left-3 top-2 text-gray-800' />
         </div>
       </div>
-      {/*notification icon*/}
       <div className='relative flex items-center ml-[55%]'>
         <div className='relative hover-notification mr-7'>
           <FaBell className='text-gray-800 text-2xl cursor-pointer' />
