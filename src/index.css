@@ -8,14 +8,13 @@ body {
   margin: 0;
   height: 100%;
 
- padding: 0;
+  padding: 0;
   background-color: #f4f3ef;
 }
 
 
-.flex-grow {
-  /* overflow: hidden; */
-  /* Prevent overflow */
+.dashboard-grid {
+  gap: 1.5rem;
 }
 
 .fixed {
