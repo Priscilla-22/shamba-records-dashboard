@@ -11,12 +11,12 @@ function Dashboard() {
   useEffect(() => {
     const fetchCardDetails = async () => {
       try {
-        const response = await fetch('/db.json'); 
+        const response = await fetch('/db.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setCardDetails(data.cardDetails); 
+        setCardDetails(data.cardDetails);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -36,7 +36,7 @@ function Dashboard() {
   }
 
   return (
-    <div className='p-2'>
+    <div className='p-2' id="dashboard">
       <div className='grid gap-6 mt-4 mb-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5'>
         {cardDetails.map((card, index) => (
           <MetricCard
