@@ -18,7 +18,7 @@ function MetricCard({ metric, gradient, iconSrc, maxValue = 10000 }) {
           zIndex: 10,
         }}
       >
-        <img src={iconSrc} alt='Icon' className='w-8 h-5 object-cover' />
+        <img src={iconSrc} alt='Icon' className='w-8 h-6 object-cover' />
       </div>
 
       <h2 className='text-base font-bold mt-4'>{metric.label}</h2>
