@@ -20,7 +20,7 @@ You can view the live demo of the dashboard here: [Shamba Records Dashboard](htt
 
 Here's an image of the complete project:
 
-![Shamba Records Dashboard](Shamba-Records-Dashboard.png)
+![Shamba Records Dashboard](/public/Shamba-Records-Dashboard.png)
 
 ## Installation
 
