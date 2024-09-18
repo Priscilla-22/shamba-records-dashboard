@@ -12,11 +12,6 @@ body {
   background-color: #f4f3ef;
 }
 
-
-.dashboard-grid {
-  gap: 1.5rem;
-}
-
 .fixed {
   position: fixed;
 }

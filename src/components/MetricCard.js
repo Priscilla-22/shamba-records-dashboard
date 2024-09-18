@@ -5,7 +5,7 @@ function MetricCard({ metric, gradient, iconSrc, maxValue = 10000 }) {
 
   return (
     <div
-      className='relative p-4 rounded-lg shadow-md w-56'
+      className='relative p-4 rounded-lg shadow-md '
       style={{
         background: gradient, 
       }}
