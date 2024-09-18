@@ -7,7 +7,6 @@ import {
   CategoryScale,
   LinearScale,
 } from 'chart.js';
-import axios from 'axios';
 
 ChartJS.register(LineElement, CategoryScale, LinearScale);
 
@@ -23,9 +22,13 @@ const Reports = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/db.json');
-        setData(response.data.reports); 
-        setFilteredReports(response.data.reports); 
+        const response = await fetch('/db.json');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        setData(result.reports);
+        setFilteredReports(result.reports);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -36,7 +39,7 @@ const Reports = () => {
 
   useEffect(() => {
     const filterReports = () => {
-      if (!Array.isArray(data)) return; 
+      if (!Array.isArray(data)) return;
 
       const result = data.filter((report) => {
         return (
