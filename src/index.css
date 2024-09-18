@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
   /* font-family: Arial, sans-serif; */
   margin: 0;
   padding: 0;
-  background-color: "#f4f3ef";
-
+  background-color: #f4f3ef;
 }
 
 
 
- .hover-notification:hover {
+.hover-notification:hover {
   animation: sway 0.5s ease-in-out;
 }
 
