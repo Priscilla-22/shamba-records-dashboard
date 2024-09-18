@@ -25,7 +25,7 @@ const cardDetails = [
   {
     label: 'Total Loans Disbursed',
     value: 2000,
-    gradient: 'linear-gradient(90deg, #C6A8A0 0%, #E2D3D1 100%)', 
+    gradient: 'linear-gradient(90deg, #C6A8A0 0%, #E2D3D1 100%)',
     iconSrc: '/icon-total-sale.png',
   },
   {
@@ -55,7 +55,7 @@ function Dashboard() {
 
   return (
     <div className='p-4'>
-      <div className='flex flex-wrap gap-6 mt-4 mb-4'>
+      <div className='grid gap-6 mt-4 mb-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5'>
         {cardDetails.map((card, index) => (
           <MetricCard
             key={index}
@@ -65,7 +65,7 @@ function Dashboard() {
           />
         ))}
       </div>
-      <div className='flex gap-4'>
+      <div className='flex flex-col lg:flex-row gap-4'>
         <div className='flex-1'>
           <Chart />
         </div>

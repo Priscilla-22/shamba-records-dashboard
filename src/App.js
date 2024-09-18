@@ -14,7 +14,7 @@ function App() {
   };
 
   return (
-    <div className='flex h-screen bg-custom-smokeWhite'>
+    <div className='flex h-screen'>
       <Sidebar isSidebarOpen={isSidebarOpen} />
 
       <div className='flex-grow flex flex-col'>
