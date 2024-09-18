@@ -3,8 +3,9 @@ import { TfiMenuAlt } from 'react-icons/tfi';
 import { CiMenuKebab } from 'react-icons/ci';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
-import Reports from './components/Reports'; // Import the Reports component
+import Reports from './components/Reports'; 
 import Navbar from './components/Navbar';
+import Settings from "./components/Settings"
 import './index.css';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
     setActiveView(view);
     if (!isSidebarOpen) {
-      setIsSidebarOpen(true); // Optionally open sidebar when a link is clicked
+      setIsSidebarOpen(true); 
     }
   };
 
@@ -38,7 +39,7 @@ function App() {
         <div className='flex-grow overflow-y-auto mt-16'>
           {activeView === 'dashboard' && <Dashboard />}
           {activeView === 'reports' && <Reports />}
-          {/* Add other views here */}
+          {activeView === 'settings' && <Settings />}
         </div>
 
         <div
