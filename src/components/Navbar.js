@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <nav className='fixed top-0  w-full p-4 flex shadow-sm z-10'>
       <div className='flex items-center'>
-        <h1 className='text-2xl font-bold ml-16 mt-1'>Dashboard</h1>
+        <h1 className='text-2xl  ml-16 mt-1 font-lemon tracking-wider'>
+          Dashboard
+        </h1>
         <div className='relative ml-6'>
           <input
             type='text'
