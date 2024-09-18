@@ -84,14 +84,6 @@ const SidebarItem = ({ href, icon: Icon, text }) => (
               </li>
               <li>
                 <a
-                  href='#settings'
-                  className='block px-4 py-2 hover:bg-green-700 rounded'
-                >
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a
                   href='#logout'
                   className='block px-4 py-2 hover:bg-green-700 rounded'
                 >
