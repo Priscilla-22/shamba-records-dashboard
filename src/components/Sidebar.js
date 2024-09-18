@@ -4,14 +4,18 @@ import { MdDashboard } from 'react-icons/md';
 import { HiOutlineDocumentReport } from 'react-icons/hi';
 import { FiSettings } from 'react-icons/fi';
 
-const Sidebar = ({ isSidebarOpen }) => {
+const Sidebar = ({ isSidebarOpen, onLinkClick }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
-  const SidebarItem = ({ href, icon: Icon, text }) => (
+  const SidebarItem = ({ href, icon: Icon, text, onClick }) => (
     <a
       href={href}
+      onClick={(e) => {
+        e.preventDefault(); // Prevent default anchor behavior
+        onClick(text.toLowerCase()); // Pass the text (converted to lowercase) to the onClick handler
+      }}
       className='flex items-center py-2 px-4 mb-2 text-lg hover:bg-green-700 rounded'
       style={{ minWidth: isSidebarOpen ? '100%' : '3.3rem' }}
     >
@@ -99,17 +103,28 @@ const Sidebar = ({ isSidebarOpen }) => {
 
       <ul className='mt-10'>
         <li>
-          <SidebarItem href='#dashboard' icon={MdDashboard} text='Dashboard' />
+          <SidebarItem
+            href='#dashboard'
+            icon={MdDashboard}
+            text='Dashboard'
+            onClick={onLinkClick}
+          />
         </li>
         <li>
           <SidebarItem
             href='#reports'
             icon={HiOutlineDocumentReport}
             text='Reports'
+            onClick={onLinkClick}
           />
         </li>
         <li>
-          <SidebarItem href='#settings' icon={FiSettings} text='Settings' />
+          <SidebarItem
+            href='#settings'
+            icon={FiSettings}
+            text='Settings'
+            onClick={onLinkClick}
+          />
         </li>
       </ul>
     </div>
