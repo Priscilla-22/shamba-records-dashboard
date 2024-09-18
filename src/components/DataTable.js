@@ -7,7 +7,6 @@ function DataTable() {
 
   useEffect(() => {
     setLoading(true);
-    // Hard-coded data
     const data = [
       {
         id: 1,

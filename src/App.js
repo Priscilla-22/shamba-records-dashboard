@@ -20,7 +20,7 @@ function App() {
 
       <div
         className={`flex-grow flex flex-col transition-all duration-300 ${
-          isSidebarOpen ? 'ml-64' : 'ml-16'
+          isSidebarOpen ? 'ml-48' : 'ml-20'
         }`}
       >
         <Navbar />
@@ -32,7 +32,7 @@ function App() {
         {/* Sidebar Toggle Button */}
         <div
           className={`fixed top-4 z-50 transition-all duration-300 ${
-            isSidebarOpen ? 'left-64' : 'left-24'
+            isSidebarOpen ? 'left-52' : 'left-20'
           }`}
         >
           <button
