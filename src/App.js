@@ -10,27 +10,29 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen((prev) => !prev);
   };
 
   return (
     <div className='flex h-screen'>
+      {/* Sidebar */}
       <Sidebar isSidebarOpen={isSidebarOpen} />
 
-      <div className='flex-grow flex flex-col'>
+      <div
+        className={`flex-grow flex flex-col transition-all duration-300 ${
+          isSidebarOpen ? 'ml-64' : 'ml-16'
+        }`}
+      >
         <Navbar />
 
-        <div
-          className={`flex-grow transition-all duration-300 ${
-            isSidebarOpen ? 'ml-4 ' : 'ml-1'
-          }`}
-        >
+        <div className='flex-grow overflow-y-auto mt-16'>
           <Dashboard />
         </div>
 
+        {/* Sidebar Toggle Button */}
         <div
-          className={`absolute top-4 ml-14 transition-all duration-300 ${
-            isSidebarOpen ? 'left-36' : 'left-8'
+          className={`fixed top-4 z-50 transition-all duration-300 ${
+            isSidebarOpen ? 'left-64' : 'left-24'
           }`}
         >
           <button
@@ -48,5 +50,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

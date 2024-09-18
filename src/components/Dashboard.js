@@ -55,7 +55,7 @@ function Dashboard() {
 
   return (
     <div className='p-4'>
-      <div className='grid gap-6 mt-4 mb-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5'>
+      <div className='grid gap-6 z-10 mt-4 ml-4 mb-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5'>
         {cardDetails.map((card, index) => (
           <MetricCard
             key={index}

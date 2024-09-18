@@ -51,7 +51,7 @@ function Chart() {
         position: 'top',
       },
       title: {
-        display: false, 
+        display: false,
       },
     },
     scales: {

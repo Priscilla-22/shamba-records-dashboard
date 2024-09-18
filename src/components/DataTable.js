@@ -58,13 +58,7 @@ function DataTable() {
         type: 'Market Linkage',
         category: 'Crop Sale',
       },
-      {
-        id: 8,
-        date: '2024-02-03',
-        amount: 300,
-        type: 'Market Linkage',
-        category: 'Crop Sale',
-      },
+    
     ];
     setTransactions(data);
     setLoading(false);

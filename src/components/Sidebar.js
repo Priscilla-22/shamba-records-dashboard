@@ -9,20 +9,20 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
-const SidebarItem = ({ href, icon: Icon, text }) => (
-  <a
-    href={href}
-    className='flex items-center py-2 px-4 mb-2 text-lg hover:bg-green-700 rounded'
-    style={{ minWidth: isSidebarOpen ? '100%' : '3.3rem' }} 
-  >
-    <Icon className='text-2xl' />
-    {isSidebarOpen && <span className='ml-3'>{text}</span>}
-  </a>
-);
+  const SidebarItem = ({ href, icon: Icon, text }) => (
+    <a
+      href={href}
+      className='flex items-center py-2 px-4 mb-2 text-lg hover:bg-green-700 rounded'
+      style={{ minWidth: isSidebarOpen ? '100%' : '3.3rem' }}
+    >
+      <Icon className='text-2xl' />
+      {isSidebarOpen && <span className='ml-3'>{text}</span>}
+    </a>
+  );
 
   return (
     <div
-      className={`max-h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
+      className={`fixed top-0 left-0 h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
         isSidebarOpen ? 'w-64' : 'w-20'
       }`}
     >
