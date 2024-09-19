@@ -84,7 +84,7 @@ const Reports = () => {
       </header>
 
       <div className='mb-4 p-4 shadow-md bg-white'>
-        <div className='flex space-x-4'>
+        <div className='flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4'>
           <label className='flex-1'>
             <span className='text-gray-700'>Start Date:</span>
             <input
@@ -123,8 +123,8 @@ const Reports = () => {
         </div>
       </div>
 
-      <div className='flex mb-4 mt-10'>
-        <div className='w-1/2 pr-4'>
+      <div className='flex flex-col md:flex-row mb-10 mt-10'>
+        <div className='w-full md:w-1/2 mb-8 md:mb-0 md:pr-4'>
           <h2 className='text-xl font-semibold mb-2'>Report Data</h2>
           <table className='w-full border-collapse border border-gray-200'>
             <thead>
@@ -153,7 +153,7 @@ const Reports = () => {
           </table>
         </div>
 
-        <div className='w-1/2 pl-4'>
+        <div className='w-full md:w-1/2 md:pl-4'>
           <h2 className='text-xl font-semibold mb-2'>Report Trends</h2>
           <div className='bg-[#05122c] p-4 border rounded-lg shadow-md'>
             <Line data={chartData} />
