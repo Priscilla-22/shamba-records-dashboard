@@ -27,9 +27,7 @@ const Settings = () => {
         <h1 className='text-2xl font-bold'>Settings</h1>
       </header>
 
-      {/* Flex layout for theme and notification settings */}
       <div className='flex flex-col md:flex-row mb-4 space-y-4 md:space-y-0 md:space-x-4'>
-        {/* Theme Settings */}
         <div className='p-4 border rounded-lg w-full md:w-1/2'>
           <h2 className='text-xl font-semibold mb-2'>Theme Settings</h2>
           <button
@@ -40,7 +38,6 @@ const Settings = () => {
           </button>
         </div>
 
-        {/* Notification Settings */}
         <div className='p-4 border rounded-lg w-full md:w-1/2'>
           <h2 className='text-xl font-semibold mb-2'>Notification Settings</h2>
           <label className='inline-flex items-center'>
@@ -55,7 +52,6 @@ const Settings = () => {
         </div>
       </div>
 
-      {/* Buttons for Save and Cancel */}
       <div className='flex justify-end space-x-4 mt-4'>
         <button
           onClick={handleSave}
