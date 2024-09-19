@@ -26,7 +26,7 @@ const Sidebar = ({ isSidebarOpen, onLinkClick }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
+      className={`fixed top-0 left-0 z-20 h-screen bg-green-800 text-white p-4 transition-all duration-300 ${
         isSidebarOpen ? 'w-48' : 'w-20'
       }`}
     >
